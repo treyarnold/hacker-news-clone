@@ -9,9 +9,11 @@ var models = [
     embedded: false
   }
 ];
+
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
   models,
   endpoint: `https://us1.prisma.sh/trey-arnold-0ae7b9/hacker-news-clone/dev`
 });
+
 exports.prisma = new exports.Prisma();
