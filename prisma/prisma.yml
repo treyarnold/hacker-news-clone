@@ -1,4 +1,5 @@
-#endpoint: ''endpoint: https://us1.prisma.sh/trey-arnold-0ae7b9/hacker-news-clone/dev
+#endpoint: ''
+endpoint: ${env:ENDPOINT}
 
 
 datamodel: datamodel.prisma
@@ -6,3 +7,9 @@ datamodel: datamodel.prisma
 generate: 
   - generator: javascript-client
     output: ../src/generated/prisma-client
+
+# hooks:
+#   post-deploy:
+#     - prisma generate
+
+secret: ${env:APP_SECRET}
